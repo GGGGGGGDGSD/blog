@@ -38,4 +38,13 @@
   
   - [转正](http://ioa.99.com/Report/K0_frmUserApp.aspx?pageCode=1494&pkey=5135&isMobile=0&title=%E9%8D%9B%E6%A8%BA%E4%BC%90%E7%92%87%E6%9B%A0%E6%95%A4%E9%8F%88%E7%86%BB%E7%98%8E%E6%B5%A0%E7%96%AF%E3%80%83&sdp-app-id=b4fb92a0-af7f-49c2-b270-8f62afac1133)
   
+  - [frontend-challenges](https://github.com/felipefialho/frontend-challenges)
+  > 不错的demo可以直接拿来使用或者参考
+  
+  - [ccxt](https://github.com/ccxt/ccxt)
+  > 一个提供的股票交易的api 库  学习下
+  
+  - [计算机教育中缺失的一课](https://missing-semester-cn.github.io/)
+  > 作为一个工具控怎么可能放过这个机会
+  
   
