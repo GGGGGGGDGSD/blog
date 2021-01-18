@@ -1,3 +1,7 @@
+# 2021之前
+- [御术：比能力更重要的是你的底层操作系统](https://mp.weixin.qq.com/s/h8HdPrmV_K0ZOBoH6f1MXw)
+
+
 # 2021
 
 ## 一月
