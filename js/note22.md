@@ -51,4 +51,6 @@
   - [计算机教育中缺失的一课](https://missing-semester-cn.github.io/)
   > 作为一个工具控怎么可能放过这个机会
   
+  - [豆瓣热门心理图书TOP10](https://m.douban.com/subject_collection/5170)
+  
   
