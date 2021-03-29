@@ -68,4 +68,4 @@
   - [翻转课堂的可汗学院 在线PDF](chrome-extension://ikhdkkncnoglghljlkmcimlnlhkeamad/pdf-viewer/web/viewer.html?file=https%3A%2F%2Fwww.sanyedu.com%2Fuserfiles%2Ffiles%2Fjsj%2F%25E7%25BF%25BB%25E8%25BD%25AC%25E8%25AF%25BE%25E5%25A0%2582%25E7%259A%2584%25E5%258F%25AF%25E6%25B1%2597%25E5%25AD%25A6%25E9%2599%25A2%25EF%25BC%259A%25E4%25BA%2592%25E8%2581%2594%25E6%2597%25B6%25E4%25BB%25A3%25E7%259A%2584%25E6%2595%2599%25E8%2582%25B2%25E9%259D%25A9%25E5%2591%25BD%25EF%25BC%2588%25E7%25BE%258E%25EF%25BC%2589%25E8%2590%25A8%25E5%25B0%2594%25E6%259B%25BC%25C2%25B7%25E5%258F%25AF%25E6%25B1%2597.pdf)
 
 - [在线观看航拍景点](https://www.airpano.com/)
-
+- [计算机科学速成课](https://github.com/1c7/Crash-Course-Computer-Science-Chinese) **TODO**
