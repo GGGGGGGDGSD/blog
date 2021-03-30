@@ -69,3 +69,6 @@
 
 - [在线观看航拍景点](https://www.airpano.com/)
 - [计算机科学速成课](https://github.com/1c7/Crash-Course-Computer-Science-Chinese) **TODO**
+
+- [深入浅出现代Web编程](https://fullstackopen.com/zh/about)
+  好文
