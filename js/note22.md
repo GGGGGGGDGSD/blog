@@ -72,3 +72,14 @@
 
 - [深入浅出现代Web编程](https://fullstackopen.com/zh/about)
   好文
+  
+  ## 四月
+  惊艳的软件工具
+  
+  - [wolframalpha](https://www.wolframalpha.com/)
+  - [wolfram](https://www.wolfram.com/?source=nav)
+  - [mathworks](https://ww2.mathworks.cn/products.html?s_tid=gn_ps)
+  - [CorelDRAW](https://www.corel.com/cn/)
+  - [Adobe](https://www.adobe.com/)
+  - [affinity](https://affinity.serif.com/zh-cn/)
+  
