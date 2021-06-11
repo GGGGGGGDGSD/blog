@@ -88,3 +88,9 @@
 - [bundlephobia](https://bundlephobia.com/package/react-hook-form@7.8.3)
   突然发现一个npm 成本对比大小的实用工具
   
+- [joi](https://github.com/sideway/joi)
+The most powerful schema description language and data validator for JavaScript. 
+
+- [yup](https://github.com/jquense/yup)
+- 
+  
