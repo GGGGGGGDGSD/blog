@@ -17,7 +17,12 @@ https://75.team/post/five-ways-to-hide-elements-in-css.html
 unit test
 
 - jest 处理样式
+https://jestjs.io/docs/configuration
+
 - jest中测试被redux  connect 包裹的dump component
 https://github.com/enzymejs/enzyme/issues/1002  我也好奇这个测试是否有意义
 https://stackoverflow.com/questions/35131312/how-to-unit-test-react-redux-connected-components
 http://www.recompile.in/2019/11/testing-redux-store-connected-react.html
+
+- css.apply问题 这个问题根据调用栈直接指向React-Select 也就是这个第三方库有问题
+对比了一下版本  发现版本差异不小  更新到最新版 居然解决了这个问题
