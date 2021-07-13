@@ -11,3 +11,13 @@ revert 恢复会保持之前的提交记录并生成新的commit    reset 不会
 
 - 隐藏页面的方法
 https://75.team/post/five-ways-to-hide-elements-in-css.html
+
+
+### 2021-07-13
+unit test
+
+- jest 处理样式
+- jest中测试被redux  connect 包裹的dump component
+https://github.com/enzymejs/enzyme/issues/1002  我也好奇这个测试是否有意义
+https://stackoverflow.com/questions/35131312/how-to-unit-test-react-redux-connected-components
+http://www.recompile.in/2019/11/testing-redux-store-connected-react.html
