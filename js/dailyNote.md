@@ -31,3 +31,10 @@ unit test相关库
 - [sinon](https://blog.kazaff.me/2016/11/11/%E8%AF%91--- Sinon%E5%85%A5%E9%97%A8%EF%BC%9A%E5%88%A9%E7%94%A8Mocks%EF%BC%8CSpies%E5%92%8CStubs%E5%AE%8C%E6%88%90javascript%E6%B5%8B%E8%AF%95/#Mocks)
 
 - [redux-mock-store](https://github.com/reduxjs/redux-mock-store)
+
+#### 工具
+- Jest Runner
+
+#### 参考
+[[译] 测试 React & Redux 应用良心指南](https://juejin.cn/post/6844903569712234509)
+[React单元测试策略及落地](https://insights.thoughtworks.cn/react-strategies-for-unit-testing/)
