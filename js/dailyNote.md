@@ -26,3 +26,8 @@ http://www.recompile.in/2019/11/testing-redux-store-connected-react.html
 
 - css.apply问题 这个问题根据调用栈直接指向React-Select 也就是这个第三方库有问题
 对比了一下版本  发现版本差异不小  更新到最新版 居然解决了这个问题
+
+unit test相关库
+- [sinon](https://blog.kazaff.me/2016/11/11/%E8%AF%91--- Sinon%E5%85%A5%E9%97%A8%EF%BC%9A%E5%88%A9%E7%94%A8Mocks%EF%BC%8CSpies%E5%92%8CStubs%E5%AE%8C%E6%88%90javascript%E6%B5%8B%E8%AF%95/#Mocks)
+
+- [redux-mock-store](https://github.com/reduxjs/redux-mock-store)
