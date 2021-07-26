@@ -175,3 +175,10 @@ Control Flow / Dynamic
 1. 精准更新 没有多余的渲染
 https://www.solidjs.com/tutorial/stores_nested_reactivity
 
+
+### 2021-07-26
+
+## navigator.sendBeacon  
+  上报数据新的api
+
+
