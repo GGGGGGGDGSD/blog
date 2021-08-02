@@ -184,5 +184,10 @@ https://www.solidjs.com/tutorial/stores_nested_reactivity
 
 ### 2021-08-02
 - 服务器渲染
+- react 18 功能
+1. automatic batching
+2. startTransition
+3. new straming server render
+[参考](https://reactjs.org/blog/2021/06/08/the-plan-for-react-18.html)
 
 
