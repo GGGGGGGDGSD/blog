@@ -1,3 +1,7 @@
+# 原则
+简洁记录 保持关注
+
+
 # 2021之前
 - [御术：比能力更重要的是你的底层操作系统](https://mp.weixin.qq.com/s/h8HdPrmV_K0ZOBoH6f1MXw)
 
@@ -92,5 +96,14 @@
 The most powerful schema description language and data validator for JavaScript. 
 
 - [yup](https://github.com/jquense/yup)
-- 
+
+
+## 七月
+- [penpot](https://github.com/penpot/penpot)
+  Penpot - The Open-Source design & prototyping platform 开源版figma
+
+- [figma](https://www.figma.com/file/omAiuELsOiuqlnEjU5vuy5/Figma-Basics?node-id=0%3A289)
+ 已经成为独角兽了
+ 
+## 八月
   
