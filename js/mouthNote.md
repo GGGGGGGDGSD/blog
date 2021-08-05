@@ -106,4 +106,9 @@ The most powerful schema description language and data validator for JavaScript.
  已经成为独角兽了
  
 ## 八月
+- [DK博物大百科——自然界的视觉盛宴](https://book.douban.com/subject/30384279/)
+- [HospitalRun](https://github.com/HospitalRun/hospitalrun)
+  学习下 monorepo 还有ts
+  
+- [Custom Elements](https://www.html5rocks.com/zh/tutorials/webcomponents/customelements/)
   
