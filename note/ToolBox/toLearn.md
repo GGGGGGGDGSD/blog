@@ -16,3 +16,4 @@ https://www.zhihu.com/question/53150351
 - rollup
 - vite
 - webpack
+- nest
