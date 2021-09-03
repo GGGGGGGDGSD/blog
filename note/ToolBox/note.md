@@ -74,6 +74,8 @@ then deal with TBOX-285 ticket next week
 - run server
   rails s -p 3005
 
+- github token 
+   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
 
 
 
@@ -249,6 +251,24 @@ array.push(StoreStateConstants.CREATE_NEW_ANNOUNCEMENT_FORM, createAnnouncementF
     ],
     "id": 2
 }
+
+
+// 一个个人配置记录
+
+- git config 配置
+别名  代理 
+
+- nvm 
+  node 版本管理
+
+- npm
+ 常用全局包  包远  以及npn config 
+
+ - vscode 
+  个人vscode 配置 以及  常用插件（icon  path提示  tailwind  css属性提示 lint  git
+
+- sublime
+因为轻量级 所以使用 常用个人配置
 
 
 
