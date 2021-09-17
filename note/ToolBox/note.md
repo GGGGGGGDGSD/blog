@@ -75,7 +75,7 @@ then deal with TBOX-285 ticket next week
   rails s -p 3005
 
 - github token 
-   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
+   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
 
 
 
@@ -265,7 +265,7 @@ array.push(StoreStateConstants.CREATE_NEW_ANNOUNCEMENT_FORM, createAnnouncementF
  常用全局包  包远  以及npn config 
 
  - vscode 
-  个人vscode 配置 以及  常用插件（icon  path提示  tailwind  css属性提示 lint  git
+  个人vscode 配置 以及  常用插件（icon  path提示  tailwind  css属性提示 lint  
 
 - sublime
 因为轻量级 所以使用 常用个人配置
