@@ -38,7 +38,12 @@
    创建一个 Dockerfile 文件  通过 docker build 命令来构建一个镜像
 
 - docker commit 提交新的镜像
-  这个就能解决我之前想持久化Ubuntu数据的问题
+  我刚接触docker时候就想用用Ubuntu 但是每次进入Ubuntu都需要重新安装vim 这样的一些常用软件  有什么办法可以可以保存我的操作记录呢  这就是docker commit 的使用场景
+  ```bash
+  docker commit -m "my ubuntu and install vim "  c839e349e63e myubuntu:v1
+  ```
+  这样我们就可以提交生成一个新的镜像 这个镜像里面包含我我们的操作记录
+  
 
 - docker build 构建镜像
 
