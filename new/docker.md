@@ -78,18 +78,18 @@ docker run -it -v 主机目录：容器目录  挂载卷
 ## dockerfile
   用来构建镜像的文件
   docker build 构建镜像
-
   docker history 可以查看镜像的构建历史
-
   docker push  发布镜像
-![nice][images/1.png]
-
 
 ## docker 网络
 
 
 ## 参考
-- [Docker--从入门到实践](https://yeasy.gitbook.io/docker_practice/)
+  - [Docker笔记](https://www.kuangstudy.com/bbs/1439163376210096129)
+  - [Docker视频](https://www.bilibili.com/video/BV1kv411q7Qc?p=1)
+  - [Docker--从入门到实践](https://yeasy.gitbook.io/docker_practice/)
+ 
+ 
 
 
 
