@@ -58,7 +58,17 @@ docker run -it -v 主机目录：容器目录  挂载卷
 
 ![微信截图_20210928160033](https://user-images.githubusercontent.com/69191533/135047797-976b0546-611b-41eb-8f5f-839456852c9c.png)
  
-我们来测试下宿主机目录 F:\test 与容器目录 /usr/data数据是否保持同步
+我们来测试下宿主机目录 F:\test 与容器目录 /usr/data数据是否保持同步 当前两边的目录都为空
+  
+  ![20210928160929](https://user-images.githubusercontent.com/69191533/135049531-3efd07b5-99ff-464e-b9c2-0ab679ae1da3.png)
+
+容器目录新建一个index.js文件
+  
+  ![20210928161259](https://user-images.githubusercontent.com/69191533/135049555-51b834bf-c8de-47ec-8090-e800239d5450.png)
+宿主机目录有数据了 在宿主机目录再增加一个home.js文件
+  ![20210928161820](https://user-images.githubusercontent.com/69191533/135050261-3a58687f-3d3a-43be-8227-e8d68cb29bb5.png)
+
+ 通过以上发现宿主机与容器的目录数据完全的同步的
 
 ## dockerfile
   用来构建镜像的文件
