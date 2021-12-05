@@ -41,10 +41,6 @@ const toastType   = ToastHelper.getToastType(toastInfo);
 
 
 
-
-
-
-
 ## loading
 ```js
 // constants
@@ -69,11 +65,6 @@ function mapStateToProps(state, ownProps) {
   };
 }
 ```
-
-
-
-
-
 
 
 ## tooltip
@@ -105,3 +96,13 @@ function mapStateToProps(state, ownProps) {
   }
 }
 ```
+
+## 
+bootstrap_overrides 引入bootstrap样式
+
+
+### 添加新的路由页面
+1. App.js页面注册路由
+2. LeftColumn 添加侧边栏选项
+3. 上面两个页面用到各种常量
+4. routes.rb 页面配置路由权限

@@ -3,7 +3,12 @@
 - redux-orm 处理数据相互之间关联性高
 - reselect 处理衍生数据
 - normalizr 处理嵌套和相关联的数据结构
-- Redux Undo  撤销  
+- Redux Undo  撤销
+
+## redux 源码理解
+- compose实现（尼玛 最近居然被问到了
+  [参考](https://segmentfault.com/a/1190000015801987)
+- 
 
 
 ## 理解redux中间件
@@ -61,8 +66,12 @@ http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_two_async_operations.
 
 
 
-recoil xstate redux mobx  context 对比
-0. 是否支持处理副作用
-1. 是否支持异步
-2. 是否支持基于缓存计算衍生值
-3. 是否支持ts
+### redux 竞品 recoil xstate redux mobx zustand 对比
+1. 是否支持处理副作用
+2. 是否支持异步
+3. 是否支持基于缓存计算衍生值
+4. 是否支持ts
+
+### zustand
+- 感觉更适合小项目
+- 没有action这样的样板代码

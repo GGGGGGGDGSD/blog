@@ -34,12 +34,8 @@
 
 ## 样式处理
 - scss
+- 内部是使用了bootstrap的样式文件  所以可以使用bootstrap 提供的类名 所以可以在这个页面(https://getbootstrap.com/docs/4.6/utilities/borders/) 查询可以使用的类名
 
-
-## modify FETCH_SINGLE_INSTITUTION_SUCCESS reducer data and remove unused dependencies of useEffect
-today l fixed TBOX-239 tiket and create a PR.
-l will to participate in freshman training tomorrow.
-then deal with TBOX-285 ticket next week
 
 
 ## 一些业务问题
@@ -75,14 +71,17 @@ then deal with TBOX-285 ticket next week
   rails s -p 3005
 
 - github token 
-   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
+   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
 
 
+### 账号
+用户名 yi@edmodo.com 
+密码  123456
 
 ### 
 - luojiang  192.168.218.131:3000
 - luoyongmao  https://api-edmodo.dazebot.dev
-- lizhengyu   http://192.168.218.60:3000
+- lizhengyu   http://192.168.218.63:3000
 
 #### 环境变量
 ```shell

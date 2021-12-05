@@ -4,11 +4,11 @@ window.print
 ## redux-form
   这东西有几个特点
   - 界面不用每次都渲染  提高了性能
-  - 支持immutable.js
-  - fieldArray在动态表单处理方便表现很强大 
-  提供了selector和action Createtor 相当于redux getState dispatch
+  1. 支持immutable.js
+  2. fieldArray在动态表单处理方便表现很强大 
+    提供了selector和action Createtor 相当于redux getState dispatch
 
-  - 关于验证
+  3. 关于验证
   - validate  同步验证
   - asyncValidate 异步验证
   - submit validate 
@@ -18,7 +18,12 @@ window.print
    异步验证还没怎么体验
 
   - submit 可以不用默认的表单提交  提供了各种表单提交状态
-  - 初始化这块也是有的
+  - 
+  4. 初始化这块也是有的
+  5. 对单元测试的友好
+  6. 是否支持ts
+  7. 是否支持服务器端渲染
+  8. 错误提示
 app
   ### 缺点  
   - 这东西是全局的的状态
@@ -61,3 +66,38 @@ app
 ## moment
 就我们项目而言 完全没必要使用moment这么重型的时间处理库  甚至大部分的应用都不需要
 dayjs已经够用了
+
+## formik
+
+## react-hook-form
+1. 设置初始值
+  ```js
+    const { register, handleSubmit } = useForm({
+    defaultValues: {
+      firstName: "bill",
+      lastName: "luo",
+      email: "test@test.com",
+      isDeveloper: true
+    }
+  });
+  ```
+  [codesandbox](https://codesandbox.io/s/react-hook-form-defaultvalues-wv8c4?file=/src/index.js:146-327)
+
+2. 检测字段是否编辑过 （dirtyFields  
+  所有也可以在提交的时候只提交编辑过的字段
+  [codesandbox](https://codesandbox.io/s/react-hook-form-formstate-dirty-touched-submitted-forked-wjk0k?file=/src/index.js:411-422)
+
+3. 错误提示
+   [codesandbox](https://codesandbox.io/s/react-hook-form-register-with-error-messages-h9m8p?file=/src/index.js:200-212)
+
+4. 多种形式的表单
+  - tab form
+  - modal form 
+  - nest form
+  - 分多步完成的
+
+5. field Array
+   [codesandbox](https://react-hook-form.com/api/usefieldarray)
+
+6. 单元测试
+   [codesandbox](https://react-hook-form.com/advanced-usage#TestingForm)

@@ -1,3 +1,4 @@
+<!-- https://www.tailwindcss.cn/docs/padding -->
 1. 总体来说我还是看好tailwind 原因几
    - 在熟悉各种类的基础上和手写css一样
    - 各种类是可以复用的最小单单位  意味着最终的css并不会很大 因为都是复用各种基本类

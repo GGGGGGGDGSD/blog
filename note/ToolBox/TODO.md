@@ -1,12 +1,10 @@
-## ToolBox接下来要做什么
-
+# ToolBox接下来要做什么
 
 org district  school admin  只能是其中一个
 
 toolBox 和所有web  mobile端联动测试
-
-
 ## 一些问题
+
 1 webapp 缺少一些功能  比如没有region的school 在web 没有显示school  都统一显示district
 2 toolBox也缺少好多功能
 3 tooBox 13检查没做
@@ -98,43 +96,18 @@ user来源
  这个核心action detailsModalFetch 在SingleMemberCheckListItem组件中还被引用  目前838中不处理了  做个记录
 
 
-
-## 每周五PR汇总给张宇
-- 需要合并的PR
-- 不想要被合并的PR
-
-
-
-##  bug list note
-956    frontend + backend 后端需要提供一个新的字段和接口
-954    backend?
-952    backend
-942    backend?(需要再验证)
-931    backend
-894    backend?
-877    backend   
-870    backend + frontend   需要后端看下official_id与NCES ID处理逻辑
-862    backend    后端做特殊字符处理（可能需要套路需要移除特殊字符么  特别国家的电话号码前面几位不一样这种
-
-861   需要PM   目前是username字段超过25保存时候后端会提示字符长度不能超过25
-859   ？（你需再要看看  我们前面看评论似乎是解决 但是看看评论时间  并没有被解决
-846  待验证
-828  我迷惑了 (注册逻辑没有districtId)
-817  本地复现了 需要后端一起定位（目前看来完全不能修改权限 移除添加都不行）
-802  frontend (目前是搜索结果中 Generate a temporary password 这个Button 点击后的模态框页面需要用到这个请求的数据)
-========================================================================================================
-
-748  ？  US dev处理 pending to close
-738  backend
-782/721/719/670  Collaborators先放一边
-======================================
-
-688 backend (需要后端放开all pages(not only first page)查询权限)
-680 backend
-TBOX-506 frontend (onboarding 后清除本地数据)
-TBOX-175  frontend
-
 ## 问题
+1. 嵌套在DropdownMenu里面的模态框不能正常打开 
+   因为在点击DropdownItem后 DropdownMenu销毁  而modal是挂载在DropdownMenu  所以也不能正常打开  意味着他们不能嵌套
+```js
+<DropdownMenu positionFixed>
+  <DropdownItem onClick={() => { history.push('/hash_tags/create_hash_tags'); }}>New hashtag</DropdownItem>
+  <LoadExistingHashtag>
+    {/* <DropdownItem> Load  Existing Hashtag</DropdownItem> */}
+    <span className="m-2">Load  Existing Hashtag</span>
+  </LoadExistingHashtag>
+</DropdownMenu>
+``
 
 ## 基础建设
 - 基础组件的开发
@@ -149,41 +122,6 @@ TBOX-175  frontend
 toast提示
 错误边界都没有componentDidCatch
 
-
-## announce
-1. draft如何和其他状态转换以及如何编辑
-2. pause 的功能逻辑
-3. 编辑中的time  date name等字段不可编辑以及name是否必须？
-4. 编辑中的 cancel 按钮的逻辑(包含draft)
-
-============
-- draft 下面编辑字段可以修改
-- 添加一个bullet本地删除模态框  done
-- 固定 submit header 栏
-- 添加submit validate 
-
-
-
-## branch 
-1080 修复
-1081 修复
-1088 因为后端release time被重置
-1079 1078  修复(同一个问题提了两遍)
-
-======================
-QA
-1006
-
-1006目前还可能存在的问题 
-1. modal 关闭导致不能滚动
-2. 创建时候的time 上下午 似乎没有区分
-3. 切换tab是时间参数 没有获取到最新的
-4. draft last-edit 是问题（后端没有更新）
-
-其他 
-active 转draft release time变为当前时间 没问题
-schedule 转 draft release time改变（有问题
- 
 
 TODO
 1. Toast组件添加submit tast
