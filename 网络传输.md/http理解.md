@@ -1,6 +1,14 @@
 ## HTTP
-1. http与https区别
+1. http 常见状态码
+2.  http常见字段
+3.  http 不同版本区别
+4. http与https区别
+5. http 1与 http2区别
+6. http缓存
+7. http与https区别
 https://www.zhihu.com/question/19577317
+8. cookie理解与实际运用
+9. websocket理解
 
 2. HTTPS的加密传输原理 **NICE**
 
