@@ -24,6 +24,17 @@ window.print
   6. 是否支持ts
   7. 是否支持服务器端渲染
   8. 错误提示
+  
+  ### 再次使用又发现一些新用法
+  1. initialValues直接通过props方式传递就可以设置表单的默认值了 
+  2. 可以通过normalize处理要存入store的数据的结构 format可以格式化从store到页面要显示的数据格式（https://redux-form.com/8.2.2/docs/api/field.md/
+     主要针对显示和存贮到redux值不一样等场景
+  3.  这两个属性才是实现嵌套表单初始化的关键配置
+      destroyOnUnmount   : false,
+      enableReinitialize : true,
+  
+  3. 嵌套表单formSection
+
 app
   ### 缺点  
   - 这东西是全局的的状态

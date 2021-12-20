@@ -21,6 +21,8 @@
    一层一层的文件组成的联合系统文件
 - 查看本地镜像
   docker images
+  
+![微信截图_20210928155342](https://user-images.githubusercontent.com/69191533/135046405-db6e5291-fd66-4fae-8c58-d7f8e713756e.png)
 
 - 查找镜像
   以从 Docker Hub 网站来搜索镜像，Docker Hub 网址为： https://hub.docker.com/
@@ -37,6 +39,12 @@
 
 - docker commit 提交新的镜像
   这个就能解决我之前想持久化Ubuntu数据的问题
+  我刚接触docker时候就想用用Ubuntu 但是每次进入Ubuntu都需要重新安装vim 这样的一些常用软件  有什么办法可以可以保存我的操作记录呢  这就是docker commit 的使用场景
+  ```bash
+  docker commit -m "my ubuntu and install vim "  c839e349e63e myubuntu:v1
+  ```
+  这样我们就可以提交生成一个新的镜像 这个镜像里面包含我我们的操作记录，上面提到镜像就是一层一层的文件系统组成  那我们其实相当于新加了一层文件系统。
+  
 
 - docker build 构建镜像
 
@@ -54,23 +62,35 @@
 ## 数据卷
 docker run -it -v 主机目录：容器目录  挂载卷
 
+![微信截图_20210928160033](https://user-images.githubusercontent.com/69191533/135047797-976b0546-611b-41eb-8f5f-839456852c9c.png)
+ 
+我们来测试下宿主机目录 F:\test 与容器目录 /usr/data数据是否保持同步 当前两边的目录都为空
+  
+  ![20210928160929](https://user-images.githubusercontent.com/69191533/135049531-3efd07b5-99ff-464e-b9c2-0ab679ae1da3.png)
+
+容器目录新建一个index.js文件
+  
+  ![20210928161259](https://user-images.githubusercontent.com/69191533/135049555-51b834bf-c8de-47ec-8090-e800239d5450.png)
+宿主机目录有数据了 在宿主机目录再增加一个home.js文件
+  ![20210928161820](https://user-images.githubusercontent.com/69191533/135050261-3a58687f-3d3a-43be-8227-e8d68cb29bb5.png)
+
+ 通过以上发现宿主机与容器的目录数据完全的同步的
 
 ## dockerfile
   用来构建镜像的文件
   docker build 构建镜像
-
   docker history 可以查看镜像的构建历史
-
   docker push  发布镜像
-![nice][images/1.png]
-
 
 ## docker 网络
 
 
 ## 参考
-- [Docker--从入门到实践](https://yeasy.gitbook.io/docker_practice/)
-- [Docker Cheat Sheet](https://github.com/wsargent/docker-cheat-sheet#images)
+  - [Docker笔记](https://www.kuangstudy.com/bbs/1439163376210096129)
+  - [Docker视频](https://www.bilibili.com/video/BV1kv411q7Qc?p=1)
+  - [Docker--从入门到实践](https://yeasy.gitbook.io/docker_practice/)
+ 
+ 
 
 
 
@@ -86,5 +106,3 @@ docker run -it -v 主机目录：容器目录  挂载卷
   c group search
   d super user list page
   e country_accounts 各种tabs page
-
- 

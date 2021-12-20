@@ -35,3 +35,7 @@ loader 从右到左执行
 - ImageminWebpackPlugin  
 - ClearWebpackPlugin
 - UglifyWebpackPlugin
+
+##  参考
+
+- [Webpack tapable 使用研究](https://juejin.im/post/5abf33f16fb9a028e46ec352)

@@ -9,3 +9,4 @@
 
 3. 类名只能作用与当前的element上
     比如 input:focus  ~label 这种实现
+  [参考实现方式](https://notiz.dev/blog/floating-form-field-with-tailwindcss)
