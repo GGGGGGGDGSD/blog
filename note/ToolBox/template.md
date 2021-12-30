@@ -1,4 +1,5 @@
 ## Toast
+=========================================================
 ```js
 // constants
   TOAST_DISTRICT_LOOKUP                      : 'districtLookup',
@@ -42,6 +43,7 @@ const toastType   = ToastHelper.getToastType(toastInfo);
 
 
 ## loading
+===============================================================
 ```js
 // constants
   BEGIN_NEW_FEATURE_ANNOUNCEMENT_FETCH_AJAX_CALL             : 'BEGIN_NEW_FEATURE_ANNOUNCEMENT_FETCH_AJAX_CALL',
@@ -68,6 +70,7 @@ function mapStateToProps(state, ownProps) {
 
 
 ## tooltip
+=================================================================
 ```js
   const [tooltipOpen, setTooltipOpen] = useState(false);
   const toggleTooltip = () => { setTooltipOpen(!tooltipOpen); };
@@ -82,6 +85,37 @@ function mapStateToProps(state, ownProps) {
     `
   }
   </Tooltip>
+```
+
+
+
+## 分页
+==============================================================
+1. view
+  
+```js
+import { useLocation } from 'react-router-dom';
+import queryString from 'query-string';
+const location = useLocation();
+  const [page, setPage]                   = useState(1);
+    useEffect(() => {
+    const { page: currPage = 1 } = queryString.parse(location.search) || {};
+
+    if (Number(currPage) !== page) {
+      setPage(Number(currPage));
+    }
+  }, [location]);
+
+
+ <PaginationNav totalPages={totalPages} currentPage={page} path={location.pathname} />
+
+
+ function mapStateToProps(state, ownProps) {
+   // 这里有细节 意味着ownProps要传进去page参数  那意味着page只能是在父组件传入
+  return {
+    totalPages   : selectTotalPages(state, ownProps),
+  };
+}
 ```
 
 ## class 样式名覆盖

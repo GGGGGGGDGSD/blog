@@ -34,6 +34,7 @@ window.print
       enableReinitialize : true,
   
   3. 嵌套表单formSection
+  4.  splice 并不能触发重渲染
 
 app
   ### 缺点  
