@@ -75,3 +75,6 @@ http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_two_async_operations.
 ### zustand
 - 感觉更适合小项目
 - 没有action这样的样板代码
+
+
+## mobx
