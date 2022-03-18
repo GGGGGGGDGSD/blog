@@ -112,6 +112,11 @@
  
  ### 泛型
  泛型（Generics）是指在定义函数、接口或类的时候，不预先指定具体的类型，而在使用的时候再指定类型的一种特性
+
+ ## other
+ ### ts自我检测
+ [type-challenges](https://github.com/type-challenges/type-challenges)
+ > 我目前水平 对我来说都挺难
  
 
  

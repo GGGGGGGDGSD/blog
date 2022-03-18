@@ -23,6 +23,7 @@
     Etag
     Last-modified
     Set-Cookie
+    keep-alive(原来这个是一个独立的response字段, 我还以为只是connection的一个值，当然这个字段只有在connection: keep-alive开启才有效，这是一个很重要字段 可以设置持久连接的超时时间和最大请求数目，一般服务器都有默认值)
 
     实体字段头部
     Content-Length
@@ -51,14 +52,36 @@ https://www.zhihu.com/question/19577317
   这就需要数字证书 那数字证书怎么防止被篡改呢  这就需要数字签名
 
 3. http2理解
+   > http2核心的就是二进制分帧层  下面这些特征都是基于这个底层技术
+
+  - http1.0
+  > 一个tcp连接只能发送一个请求，请求成功才能发送下一个请求， 响应返回tcp断开
+  
+  - http1.1(开启keep-alive)
+  > 一个tcp连接可以发送多个请求 但是同一时刻一个连接仍然只能发送一个请求，改变的只是连接时间，但是请求发送机制并没有改变，如果要并发请求只能开启一个新的tcp连接，但是一个域名下一般最多只能同时开启6个 tcp连接, 对头阻塞问题仍然没有被解决（我现在想确认这个表述是否有问题
+
+  - http2
+  > 帧 消息  数据流（三个核心概念
+  1. 帧是最小的数据单元 包好最基本的消息 比如属于哪个数据流
+  2. 一个消息对应真实的一个请求或者响应的一些列帧
+  3. 已经建立的连接内的双向字节流， 可以承载一条或者多条消息
+  他们之间关系
+  4. 一个tcp连接内可以承载任意数量的双向字节流，所有通信都在一个tcp连接内完成
+  5. 每个数据流都有唯一的标识符和可选的优先级信息用于承载双向消息
+  6. 每条消息都是一条逻辑http消息
+  7. 帧是最小通信单元  承载特定类型数据 比如http标头 消息负载 不同数据流的帧可以交互发送 然后再根据每个帧投的数据标识符重新组装
 
   二进制编码
   多路复用
   服务器端推送
   发送请求优先级
   请求头部压缩
-  https://www.zhihu.com/question/34074946
-  https://developers.google.com/web/fundamentals/performance/http2?hl=zh-cn
+  [HTTP/2 简介  google dev](https://developers.google.com/web/fundamentals/performance/http2?hl=zh-cn)
+  [HTTP/2 相比 1.0 有哪些重大改进? 知乎](https://www.zhihu.com/question/34074946)
+
+  http2缺点
+  1. http2丢包会导致整个tcp连接都阻塞  http1 只会影响单个tcp连接 其他tcp连接仍然可以继续使用
+  
 
 4. tcp 和udp区别
 - TCP 是面向连接的协议 。 UDP 是无连接的协议
@@ -81,11 +104,21 @@ https://juejin.cn/post/6844903801778864136
 expires 设置过期时间 缺点是服务时间可能和客服端时间不一致
 cache-control 设置过期时间长度（http1.1) cache-control 优先级比expires高
 
+cache-control
+- no-store 不缓存
+- no-cache 强制发送请求比对（协商缓存
+
 弱缓存
 last-modified/if-modified-since 
 etag/if-none-match
 
 四种缓存的优先级：cache-control > expires > etag > last-modified
 
-6. cookie
+为什么Etag 优先级比last-modified高
+1. last-modified只能精确到秒级别
+2. 一些文件只是更改了修改时间，但是没有任何内容的修改（比如打包 缓存策略等）
+ 想想 我们需要的是比较内容更改 更改时间只是一种侧面判断方式 真正需要判断的还是内容  所有Eag优先级更高
+3. etag通常用散列值生成
+
+3. cookie
   补充http无状态的缺点
