@@ -140,3 +140,11 @@ bootstrap_overrides 引入bootstrap样式
 2. LeftColumn 添加侧边栏选项
 3. 上面两个页面用到各种常量
 4. routes.rb 页面配置路由权限
+
+### bulk upload flow 
+ 1. bulkUpload 文件  返回一个jobId
+ 2. startPolling 通过jobId监听文件上传进度
+ 3. runPolling 通过不断的重试来监听数据（三种状态 成功 失败  超时）
+ 4. onPolling 监听的数据（ running_status replication_lags filename, sync_job_status(通过这个来判断是否需要重试)
+ 5. onSuccess 成功后调用 uploadCompleteAction fetchCurrentJobProgressSuccessAction
+  

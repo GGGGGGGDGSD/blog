@@ -1,6 +1,36 @@
 ## HTTP
 1. http 常见状态码
 2.  http常见字段
+  字段的能做如下分类分类
+    - 通过字段头部
+      connect
+      cache-control
+
+    - 请求字段头部
+      accept
+      accept-language
+      accept-encoding
+      connection
+      cache-control
+      host
+      user-Agent
+      referer
+      if-none-match
+      if-modified-Since
+
+    响应字段头部
+    Access-Control-Allow-Origin
+    Etag
+    Last-modified
+    Set-Cookie
+
+    实体字段头部
+    Content-Length
+    Content-Type
+    Content-Language
+    Content-Encoding
+    ExPires
+   
 3.  http 不同版本区别
 4. http与https区别
 5. http 1与 http2区别
@@ -22,7 +52,11 @@ https://www.zhihu.com/question/19577317
 
 3. http2理解
 
-  二进制编码 多路复用 服务器端推送 发送请求优先级 请求头部压缩
+  二进制编码
+  多路复用
+  服务器端推送
+  发送请求优先级
+  请求头部压缩
   https://www.zhihu.com/question/34074946
   https://developers.google.com/web/fundamentals/performance/http2?hl=zh-cn
 
@@ -52,3 +86,6 @@ last-modified/if-modified-since
 etag/if-none-match
 
 四种缓存的优先级：cache-control > expires > etag > last-modified
+
+6. cookie
+  补充http无状态的缺点

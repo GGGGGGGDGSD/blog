@@ -3,17 +3,42 @@
  这个没啥好说
  
  ### 对象类型
- 使用接口来定义对象的类型
+  - 使用接口来定义对象的类型
  ```js
  interface Person {
    name: string;
-   age: numbaer;
+   age: number;
  }
- 
  ```
+
+ - 使用type
+
+ ```js
+ type Person = {
+   name: string;
+   age: 'number;
+ }
+ ```
+ - 对象的key
+  ```js
+  interface Map = {
+    [key: number]: string;
+  }
+  ```
+ 
  - 接口一般首字母大写
  - 接口的属性数量必须与对象一致， 可以设置可选属性， 可选属性的含义是该属性可以不存在
  - 只读属性 readonly 
+
+- 对象继承
+   ```js
+   interface AddressWithUnit extends BasicAddress {
+      unit: string;
+    }
+   ```
+
+
+
  
  ### 数组的类型
  
