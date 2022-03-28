@@ -4,6 +4,7 @@
 - reselect 处理衍生数据
 - normalizr 处理嵌套和相关联的数据结构
 - Redux Undo  撤销
+- redux-thunk
 
 ## redux 源码理解
 - compose实现（尼玛 最近居然被问到了

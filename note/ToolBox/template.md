@@ -148,3 +148,17 @@ bootstrap_overrides 引入bootstrap样式
  4. onPolling 监听的数据（ running_status replication_lags filename, sync_job_status(通过这个来判断是否需要重试)
  5. onSuccess 成功后调用 uploadCompleteAction fetchCurrentJobProgressSuccessAction
   
+/*
+  bulk upload            request
+  districts
+  regions
+  schools
+  teachers
+  students
+  groups
+  district_admins
+  school_admins
+  groups              classes
+                  enterprise_admins
+  memberships
+*/

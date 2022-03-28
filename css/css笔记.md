@@ -5,6 +5,12 @@
  - 这两种盒子的主要区别在与content是否包含了padding和border
  - [codeSandbox demo](https://codesandbox.io/s/css-demo-dsto9)
  - 应用 实现一个三角形:原理也是把content设置为零， 设置border的大小来均分撑起盒子， 不想显示的边社会成透明
+## bfc
+> bfc会渲染为一个完全独立的区域 有以下方式可以触发
+ 1. float非none值
+ 2. overflow非visible
+ 3. display inline-block 以及table-cell
+ 4. position absolute fixed
 
 ## css选择器
 - ID 选择器

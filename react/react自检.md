@@ -5,3 +5,7 @@
 > 全面
 
 2. [如何考察候选人的react技术水平？](https://www.zhihu.com/question/60548673)
+
+## 具体问题
+1. setState 是同步还是异步、
+    [知乎]（https://zhuanlan.zhihu.com/p/372275423）
