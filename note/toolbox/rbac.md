@@ -128,7 +128,7 @@
    };
  ```
 
-3. 路由渲染权限控制
+**3. 路由渲染权限控制**
   > 通过高阶组件ProtectedRoute来渲染可访问的路由
   具体逻辑：通过Route组件传递进来的参数pathname计算得到第一级路由和第二级路由，通过这两个参数以及权限表可判断当前路由是否可访问
   ```js
@@ -136,7 +136,7 @@
     const hasAccessInfo = currentUserRouteRbac && currentUserRouteRbac[first]?.children[second];
   ```
 
-4. 菜单渲染
+**4. 菜单渲染**
   > 核心逻辑和上面一样
   ```js
     const [firstMenu, secondLevelMenu] = pathname?.slice(1).split('/') || [];
@@ -144,4 +144,4 @@
   ```
   注意这里面是如何处理菜单模态框的
 
-5. 获取具体路由模块的操作权限
+**5. 获取具体路由模块的操作权限**
