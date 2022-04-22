@@ -132,19 +132,131 @@
   > 通过高阶组件ProtectedRoute来渲染可访问的路由
   具体逻辑：通过Route组件传递进来的参数pathname计算得到第一级路由和第二级路由，通过这两个参数以及权限表可判断当前路由是否可访问
   ```js
-    const [first, second] = path?.slice(1)?.split('/') || [];
-    const hasAccessInfo = currentUserRouteRbac && currentUserRouteRbac[first]?.children[second];
+  import React from 'react';
+  import { Route } from 'react-router-dom';
+  import NotFound from '../404_page/404Page';
+
+  const ProtectedRoute = ({
+    currentUserRouteRbac,
+    path,
+    currentUser,
+    ...rest
+  }) => {
+    const isLogin = currentUser && currentUser?.get('name');
+    const [firstLevelMenu, secondLevelMenu] = path?.slice(1)?.split('/');
+
+    if (!isLogin) return null;
+
+    const hasAccessRbacInfo = currentUserRouteRbac && currentUserRouteRbac[firstLevelMenu]?.children[secondLevelMenu];
+
+    if (hasAccessRbacInfo && hasAccessRbacInfo.length) {
+      return <Route exact path={path} {...rest} />;
+    }
+
+    if (currentUserRouteRbac && !(hasAccessRbacInfo && hasAccessRbacInfo.length)) {
+      return <Route path="*" component={NotFound} />;
+    }
+    return null;
+  };
+
+  export default ProtectedRoute;
   ```
 
 **4. 菜单渲染**
   > 核心逻辑和上面一样
   ```js
-    const [firstMenu, secondLevelMenu] = pathname?.slice(1).split('/') || [];
-    const hasAccess = firstLevelMenu?.children[secondLevelMenu];
+   return (
+    <div className="left-column">
+      <div className="left-header mt-5 mb-3">{leftHeading}</div>
+
+      {menuList.map((item) => {
+        const {
+          children, name, value, pathname,
+        } = item || {};
+        const firstLevelMenu = currentUserRbac && currentUserRbac[pathname];
+
+        if (!firstLevelMenu) {
+          return null;
+        }
+
+        return (
+          <Fragment key={name + pathname}>
+            <div
+              className={collapseClassName(leftCollapse, value, `qa-test-leftcol-${value}`)}
+              onClick={() => toggleLeftCollapse(value)}
+            >
+              {name}
+            </div>
+            <Collapse isOpen={leftCollapse === value}>
+              <Nav vertical>
+                {children.map(({
+                  pathname, name, callback, search,
+                }) => {
+                  const [_, secondLevelMenu] = pathname?.slice(1).split('/') || [];
+                  const hasAccess = firstLevelMenu?.children[secondLevelMenu];
+
+                  if (callback) {
+                    return (
+                      <NavLink className={classNames('institution_modal', `qa-test-leftCol-institutions-${camelCase(name)}`)} onClick={callback}>
+                        Create School
+                      </NavLink>
+                    );
+                  }
+
+                  if (hasAccess) {
+                    return (
+                      <NavItem key={pathname + name}>
+                        <Link
+                          className={`${tabClass(match, pathname)} qa-test-leftCol-superUsers`}
+                          to={{ pathname, ...(search && { search }) }}
+                        >
+                          {name}
+                        </Link>
+                      </NavItem>
+                    );
+                  }
+                })}
+              </Nav>
+            </Collapse>
+          </Fragment>
+        );
+      })}
+    </div>
+  );
   ```
   注意这里面是如何处理菜单模态框的
 
 **5. 获取具体路由模块的操作权限**
+> 通过封装一个高阶组件RBACWrapper来判断某一个具体的按钮是否有操作权限，
+```js
+import react from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { selectCurrentUserRouteRbac } from '../../selectors/UserSelectors';
+
+const RBACWrapper = ({
+  rbacKey, children, location, currentUserRouteRbac,
+}) => {
+  const { pathname } = location || {};
+  const [firstLevelMenu, secondLevelMenu] = pathname && pathname?.slice(1).split('/') || [];
+
+  const currentMenuRbacInfo = currentUserRouteRbac && currentUserRouteRbac[firstLevelMenu]?.children[secondLevelMenu] || [];
+
+  if (!currentMenuRbacInfo.includes(rbacKey)) {
+    return null;
+  }
+
+  return children;
+};
+
+function mapStateToProps(state) {
+  return {
+    currentUserRouteRbac: selectCurrentUserRouteRbac(state),
+  };
+}
+
+export default withRouter(connect(mapStateToProps)(RBACWrapper));
+```
 
 ## Other
 - [rbac后端字段对应表](https://shimo.im/sheets/5s64xm0zkT4vCuKy/ZruKR)
