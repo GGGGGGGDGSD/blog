@@ -145,3 +145,10 @@
   注意这里面是如何处理菜单模态框的
 
 **5. 获取具体路由模块的操作权限**
+
+## Other
+- [rbac后端字段对应表](https://shimo.im/sheets/5s64xm0zkT4vCuKy/ZruKR)
+- [rbac接口文档](https://edmodoworld-jira.atlassian.net/wiki/spaces/ENG/pages/156270886/API)
+- 测试账号
+  1. lzy_teacher1@edmodo.com/password superuser_full
+  2. lzy_teacher2@edmodo.com/password superuser_customer_support
