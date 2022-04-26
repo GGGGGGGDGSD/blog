@@ -61,8 +61,10 @@ https://juejin.cn/post/6850418109636050958
   https://juejin.cn/post/6844904066397503502
 
 8. React Fiber理解
-基于浏览器的单线程调度算法
-https://github.com/xxn520/react-fiber-architecture-cn
+- [基于浏览器的单线程调度算法](https://github.com/xxn520/react-fiber-architecture-cn)
+- [完全理解React Fiber](http://www.ayqy.net/blog/dive-into-react-fiber/)
+- [由浅入深快速掌握React Fiber](https://www.jianshu.com/p/37d7de212df1)
+- [React Fiber 架构学习](https://zhuanlan.zhihu.com/p/44942360)
 
 9. hooks 
  - hooks 理解

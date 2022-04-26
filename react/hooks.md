@@ -9,7 +9,8 @@
 - [Hooks中文](https://react.docschina.org/docs/hooks-intro.html)
 - [How to fetch data with React Hooks?](https://www.robinwieruch.de/react-hooks-fetch-data)
 
-- [React Hooks 原理](https://github.com/brickspert/blog/issues/26)
+- [React Hooks 原理](https://github.com/brickspert/blog/issues/26
+- [源码解析 React Hook 构建过程：没有设计就是最好的设计](https://www.infoq.cn/article/fiwngsiolacmt-hphlyc)
 
 ### 最佳实践
 - [React Hooks 最佳实践](https://juejin.im/post/5ec7372cf265da76de5cd0c9)
