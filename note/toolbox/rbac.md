@@ -30,7 +30,7 @@
    > 配置rbac路由映射表routeRbacMap, 配置规则：通过[这个表](https://shimo.im/sheets/5s64xm0zkT4vCuKy/ZruKR)计算对应rbacKey对应的路由(目前只考虑到二级路由)
    ```js
     // key = rbacKey  value = url
-    const routeRbacMap = {
+    const RbacRouteMap = {
      'superuser_tools#delete_superuser'                           : 'superusers/list',
      'superuser_tools#superusers'                                 : 'superusers/list',
      'superuser_tools#takeover_history'                           : 'superusers/list',
@@ -163,7 +163,125 @@
   ```
 
 **4. 菜单渲染**
-  > 核心逻辑和上面一样
+> 核心逻辑和上面一样
+```js
+// menuList.js
+import PagePathConstants from '../../../constants/PagePathConstants';
+import LeftColumnConstants from '../../../constants/LeftColumnConstants';
+import InstitutionConstants from '../../../constants/InstitutionConstants';
+import StoreStateConstants from '../../../constants/StoreStateConstants';
+
+const menuList = [
+  {
+    name     : LeftColumnConstants.SUPERUSER_TOOLS,
+    value    : LeftColumnConstants.SUPERUSERS,
+    pathname : 'superusers',
+    children : [
+      { name: LeftColumnConstants.SUPERUSERS, pathname: PagePathConstants.SUPERUSERS_PAGE_PATH },
+      { name: LeftColumnConstants.LDAP_MAPPING, pathname: PagePathConstants.LDAP_MAPPING, search: '?page=1' },
+      { name: LeftColumnConstants.CUSTOMER_SUPPORT_VENDORS, pathname: PagePathConstants.CUSTOMER_SUPPORT_VENDORS },
+    ],
+  },
+  {
+    name     : LeftColumnConstants.USERS,
+    value    : LeftColumnConstants.USERS,
+    pathname : 'users',
+    children : [
+      { name: LeftColumnConstants.SEARCH, pathname: PagePathConstants.USER_SEARCH_PATH },
+      { name: LeftColumnConstants.FLAGGED, pathname: PagePathConstants.USER_FLAGGED_PATH, search: '?page=1' },
+      { name: LeftColumnConstants.TAKEOVERS, pathname: PagePathConstants.USER_TAKEOVERS_PATH, search: '?page=1' },
+      { name: LeftColumnConstants.BADGES, pathname: PagePathConstants.USER_BADGES_PATH },
+      { name: LeftColumnConstants.CHAT_SEARCH, pathname: PagePathConstants.CHAT_SEARCH_PATH },
+      { name: LeftColumnConstants.POSTS, pathname: PagePathConstants.POST_SEARCH_PATH },
+      { name: LeftColumnConstants.NINJAPASSWORDS, pathname: PagePathConstants.USER_NINJAPASSWORDS_PATH },
+      { name: LeftColumnConstants.EGYPT_STUDENTS, pathname: PagePathConstants.USER_EGYPT_STUDENTS_PATH },
+
+    ],
+  },
+  {
+    name     : LeftColumnConstants.INSTITUTIONS,
+    value    : LeftColumnConstants.INSTITUTIONS,
+    pathname : 'institutions',
+    children : [
+      { name: LeftColumnConstants.SEARCH, pathname: PagePathConstants.INSTITUTION_SEARCH_PATH, search: `?filter=${InstitutionConstants.SCHOOLS_FILTER}&${StoreStateConstants.PAGE}=1` },
+      { name: LeftColumnConstants.IP_FORWARDING, pathname: PagePathConstants.IP_FORWARDING_PATH },
+      { name: 'Create School', modalType: 'school' },
+      { name: 'Create District', modalType: 'district' },
+    ],
+  },
+  {
+    name     : LeftColumnConstants.BULK_SMS,
+    value    : LeftColumnConstants.BULK_SMS,
+    pathname : 'pages',
+    children : [
+      { name: LeftColumnConstants.BULK_SMS, pathname: PagePathConstants.BULK_SMS },
+    ],
+  },
+  {
+    name     : LeftColumnConstants.ENTERPRISE_ACCOUNTS,
+    value    : LeftColumnConstants.ENTERPRISE,
+    pathname : 'enterprise',
+    children : [
+      { name: LeftColumnConstants.COUNTRY_ACCOUNTS, pathname: PagePathConstants.COUNTRY_ACCOUNTS_PATH, search: '?page=1' },
+    ],
+  },
+  {
+    name     : LeftColumnConstants.ADMIN_TOOLS_TEXT,
+    value    : LeftColumnConstants.ADMIN_TOOLS,
+    pathname : 'admin_tools',
+    children : [
+      { name: LeftColumnConstants.INSTITUTION_ADMIN_RIGHTS, pathname: PagePathConstants.ADMIN_INSTITUTION_PATH, search: '?page=1' },
+      { name: LeftColumnConstants.TOOLBOX_ADMINS, pathname: PagePathConstants.TOOLBOX_ADMIN_PATH, search: '?page=1' },
+    ],
+  },
+  {
+    name     : LeftColumnConstants.DISCOVER,
+    value    : LeftColumnConstants.DISCOVER,
+    pathname : 'discover',
+    children : [
+      { name: LeftColumnConstants.FLAGGED, pathname: PagePathConstants.DISCOVER_FLAGGED_PATH },
+    ],
+  },
+  {
+    name     : LeftColumnConstants.DDRS,
+    value    : LeftColumnConstants.DDRS_MENU,
+    pathname : 'ddrs',
+    children : [
+      { name: LeftColumnConstants.USER_DELETIONS, pathname: PagePathConstants.DDRS_DELETION_PATH, search: '?page=1' },
+      { name: LeftColumnConstants.USER_RESTORATIONS, pathname: PagePathConstants.DDRS_RESTORATION_PATH, search: '?page=1' },
+    ],
+  },
+  {
+    name     : LeftColumnConstants.NEW_FEATURE_ANNOUNCEMENTS,
+    value    : LeftColumnConstants.ANNOUNCEMENT,
+    pathname : 'announcement',
+    children : [
+      { name: LeftColumnConstants.VIEW_ALL_ANNOUNCEMENTS, pathname: PagePathConstants.VIEW_ALL_ANNOUNCEMENTS_PATH, search: '?page=1' },
+      { name: LeftColumnConstants.CREATE_NEW_ANNOUNCEMENT, pathname: PagePathConstants.CREATE_ANNOUNCEMENTS_PATH },
+    ],
+  },
+  {
+    name     : LeftColumnConstants.ELASTIC_SEARCH,
+    value    : LeftColumnConstants.ELASTIC_SEARCH,
+    pathname : 'elasticsearch',
+    children : [
+      { name: LeftColumnConstants.UPSERT_DOCUMENT, pathname: PagePathConstants.ELASTIC_SEARCH_PATH, search: '?page=1&instancePage=1' },
+      { name: LeftColumnConstants.ELASTIC_CONFIG_MANAGE, pathname: PagePathConstants.ELASTIC_SEARCH_CONFIG_PATH, search: '?page=1' },
+    ],
+  },
+  {
+    name     : LeftColumnConstants.HASHTAGS,
+    value    : LeftColumnConstants.HASH_TAGS,
+    pathname : 'hash_tags',
+    children : [
+      { name: LeftColumnConstants.RECOMMEND, pathname: PagePathConstants.HASH_TAGS_RECOMMEND_PATH, search: '?page=1' },
+    ],
+  },
+];
+
+export default menuList;
+```
+
   ```js
    return (
     <div className="left-column">
@@ -232,7 +350,7 @@
 import react from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { selectCurrentUserRouteRbac } from '../../selectors/UserSelectors';
+import { selectCurrentUserRbacRouteRbac } from '../../selectors/UserSelectors';
 
 const RBACWrapper = ({
   rbacKey, children, location, currentUserRouteRbac,
@@ -251,7 +369,7 @@ const RBACWrapper = ({
 
 function mapStateToProps(state) {
   return {
-    currentUserRouteRbac: selectCurrentUserRouteRbac(state),
+    currentUserRouteRbac: selectCurrentUserRbacRouteRbac(state),
   };
 }
 

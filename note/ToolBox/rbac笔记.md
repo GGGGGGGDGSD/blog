@@ -27,7 +27,7 @@
      
      ```js
      // key = rbacKey  value = url
-     const routeRbacMap = {
+     const RbacRouteMap = {
       'superuser_tools#delete_superuser'                           : 'superusers/list',
       'superuser_tools#superusers'                                 : 'superusers/list',
       'superuser_tools#takeover_history'                           : 'superusers/list',

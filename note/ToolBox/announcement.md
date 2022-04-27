@@ -144,3 +144,6 @@ static getCompareCampaignParams(oldForms, newForms) {
 
 1. 在提交表单时候才上传图片。提交表单的请求顺序是：上传图片到s3成功后得到url => 再发送创建/编辑announcement的请求
 2. 当前更改没有提供更新图片 这部分需要先调通删除图片成功的相关s3配置
+
+## 文档资源
+- [接口文档]（https://shimo.im/docs/kqtHjVy39xVp8Xvy/read）
