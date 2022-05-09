@@ -9,6 +9,8 @@ Shift + Command + .
 unzip filename
 https://blog.csdn.net/u012988591/article/details/76976808
 
+- VS 
+https://docs.microsoft.com/zh-cn/visualstudio/mac/keyboard-shortcuts?view=vsmac-2019
 
 
 
