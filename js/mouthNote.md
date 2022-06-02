@@ -111,4 +111,9 @@ The most powerful schema description language and data validator for JavaScript.
   学习下 monorepo 还有ts
   
 - [Custom Elements](https://www.html5rocks.com/zh/tutorials/webcomponents/customelements/)
-  
+
+
+# 2022
+## 六月
+- [透明国际](https://zh.wikipedia.org/zh-sg/%E9%80%8F%E6%98%8E%E5%9B%BD%E9%99%85)
+最近公司的入职课程需要学习反腐败，从中一直是反腐败很重要。这不仅是国际 部门，组织，公司需要关注。个人更应该关注，因为腐败会导致更多的不公平  
