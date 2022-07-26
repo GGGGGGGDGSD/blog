@@ -36,6 +36,16 @@ Revert some existing commits
 删除某次commit  会产生新的提交记录， 不过确实很实用
 revert 恢复会保持之前的提交记录并生成新的commit    reset 不会之前重置到制定的commit 没有任何记录
 
+## git stash
+> 多分支切换操作
+
+1. git stash apply 使用而不删除stash里面的记录
+2. git stash pop 使用然后删除stash记录
+3. git stash drop 删除记录
+4. git stash -u 储存未跟踪的文件（这个很有用 因为默认是不是储存为跟踪的文件的
+5. git stash save (使用git stash save命令取代git stash，给每次stash填写一个message作为标识
+6. git stash show (查看指定 stash 的 diff
+
 
 ## Administration
 ### git reflog 
