@@ -45,6 +45,7 @@ revert 恢复会保持之前的提交记录并生成新的commit    reset 不会
 4. git stash -u 储存未跟踪的文件（这个很有用 因为默认是不是储存为跟踪的文件的
 5. git stash save (使用git stash save命令取代git stash，给每次stash填写一个message作为标识
 6. git stash show (查看指定 stash 的 diff
+7. git stash push -m "test" src/ConfirmModal/ src/FloatAlert/ stash指定的文件 文件夹以及多个文件
 
 
 ## Administration
@@ -71,7 +72,18 @@ git branch -vv
 318133f9d54cc1d8d661cda66c8442d375eed32f
 
 - Git合并特定commits 到另一个分支
-git cherry-pick
+git cherry-pick commit-id
+
+- 多次commit如何合并成一个commit(修改PR时，如何只提交一个commit)
+  1. git rebase -i [commitID]  git push -f git rebase --abort
+  [参考](https://blog.csdn.net/mlz_2/article/details/124302900)
+
+  2. 在自己独立开发的分支（已有commit）上需要合并master分支的最新代码，这种也可以使用 git rebase (变基)
+1.  - git rebase master
+2.  - git rebase --continue
+
+  1. git reset [commitID]
+   这也是一种方式
 
 
 ## 一些常见操作
@@ -112,3 +124,11 @@ git checkout -b 远程分支名 origin/远程分支名
 ## 相关问题
 1. connect to host github.com port 22: Connection timed out
    https://www.silenceboy.com/2020/03/04/git-clone-%E5%87%BA%E7%8E%B0ssh-connect-to-host-github-com-port-22-Connection-timed-out%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/index.html
+
+
+
+
+## latest Personal access tokens (三个月)
+- Support for password authentication was removed on August 13, 2021
+
+token: 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

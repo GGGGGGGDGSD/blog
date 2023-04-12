@@ -105,3 +105,9 @@ const useRequest = (url) => {
     - 最小state props
     - 组合优于继承
     -  其他程序设计原则
+
+## react18
+
+### createRoot 替换 render
+  - [react 官网](https://github.com/reactwg/react-18/discussions/5)
+  - [中文版](https://juejin.cn/post/6992435557456412709)

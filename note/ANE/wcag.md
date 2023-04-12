@@ -39,9 +39,9 @@ Wcag
 
    attribute is used to indicate that the value entered into an input field is not in a format or a value the application will accept. This may include formats such as email addresses or telephone numbers. aria-invalid can also be used to indicate that a required field is empty.
 
+3. progressbar aria-valuemin aria-valuemax aria-valuenow
 
-
-1. voiceOver
+4. voiceOver
  按下 Control 键 来控制暂停或者继续
  Copy a phrase to the Clipboard (or Pasteboard): Press VO-Shift-C.
   
@@ -71,3 +71,49 @@ Wcag
     // expect(onKeyDown).toBeCalled()
 
 2. expect(onKeyDown).toBeCalled() 和 expect(onKeyDown).toBeCalled 区别
+
+## 具体case
+Ensures every form element has a label
+需要为表单元素添加 aria-label
+
+time 日期下拉选择框
+aria-controls={expanded ? calendarId : undefined}
+aria-expanded={expanded}
+aria-haspopup="listbox"
+
+TimePicker DatePicker Dropdown
+
+
+
+
+## active/css  wcag
+Tag  组件自身样式对比度问题
+TagsInput 不支持传递aria相关参数
+Input 对比度有点问题
+Step indicator 组件自身样式对比度问题
+Progress 缺少role aria-label
+
+Alert 组件自身样式对比度问题(不用处理)
+
+
+## 遇到一些问题 (key: Accessible  on a group of checkbox)
+role 为 group 的div标签 checkbox group 如何让读屏器读出required
+1. aria-required不能用到role='group'
+2. required属性只能用于form标签
+
+目前收集到一些方案
+1. required放到label标签上实现 
+2. role为combobox
+3. fieldset [fieldset MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/fieldset)
+
+reference links
+- https://stackoverflow.com/questions/6218494/using-the-html5-required-attribute-for-a-group-of-checkboxes
+- https://www.w3.org/TR/2016/WD-wai-aria-practices-1.1-20160317/examples/checkbox/checkbox-2.html
+- https://www.w3.org/WAI/tutorials/forms/grouping/
+- https://www.a11ymatters.com/pattern/checkbox/
+- https://stackoverflow.com/questions/71555672/create-accessible-checkbox-group-with-multiple-descriptions
+- https://blog.tenon.io/accessible-validation-of-checkbox-and-radiobutton-groups/
+
+相关参考
+- [required MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:required)
+- [aria-required MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-required)

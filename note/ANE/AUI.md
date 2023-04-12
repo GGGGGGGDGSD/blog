@@ -34,6 +34,9 @@
   yi.song@activenetwork.com
   44d268dl1102y#Q
 
+  latest
+  44d268dl1102y@#Q
+
   ============AUI===========
   ---------
   recware/safari1
@@ -43,6 +46,7 @@
 
    user name: GPN\songyi
    password : 44d268dl1102y#Q
+              44d268dl1102y@#Q
 
    这个密码过期的话 直接输入登录名 GPN\songyi  然后就会要求你输入原密码重置
 
@@ -50,7 +54,7 @@
    https://gpn.sumtotal.host/(课程学习)
 
    user name: G1042968
-   password: 44d268dl1102y@Q
+   password: 44d268dl1102y!!Q
 
    =============
    github

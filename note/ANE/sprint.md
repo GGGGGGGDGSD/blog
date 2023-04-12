@@ -208,3 +208,38 @@ note!!! 对应的WCAG 也要考虑修改
 1. 需要后端格式化部分
   - Reservation rules
   - Resource Search(date filter summery on center map)
+
+
+
+=============
+AWF-2286
+------
+- [eslint](https://eslint.org/)
+主要一下几个点
+1. 如何在一个项目中应用eslint https://eslint.org/docs/latest/use/getting-started 
+2. 命令行中如何使用eslint 以及对应的参数  package.json中经常使用
+3. 配置文件有哪些具体的规则 .eslintrc文件 https://eslint.org/docs/latest/use/core-concepts
+4. eslint 搭配vscode具体配置，如何保证在vs code独立应用每个项目的.eslintrc rule  以及自动保存格式化等
+
+
+==========
+PL-482
+
+## 
+1. ReactNode、ReactElement区别
+2. @faker-js/faker 
+
+## QA
+1. detail node api nodeActionType = 1 表示 filling类型？
+2. 每次刷新 startinstance只是中间状态？
+3. 500 时候页面空白  是否需要自动返回select customer page?
+
+
+==========
+UT-warning
+1. Warning: An update to ForwardRef(FormControlHOC) inside a test was not wrapped in act(...).
+    
+    When testing, code that causes React state updates should be wrapped into act(...):
+
+
+
